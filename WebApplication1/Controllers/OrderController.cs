@@ -44,6 +44,7 @@ namespace WebApplication1.Controllers
                 return BadRequest("order not found.");
 
             dbOrder.Price = request.Price;
+            dbOrder.Quantity = request.Quantity;
 
             await context.SaveChangesAsync();
             return Ok(await context.OrderDetailss.ToListAsync());
