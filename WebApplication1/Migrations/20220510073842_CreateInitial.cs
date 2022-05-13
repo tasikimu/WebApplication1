@@ -29,14 +29,14 @@ namespace WebApplication1.Migrations
                 name: "OrderDetailss",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetailss", x => x.OrderId);
+                    table.PrimaryKey("PK_OrderDetailss", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(

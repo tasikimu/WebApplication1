@@ -1,0 +1,29 @@
+<!-- <div *ngFor="let product of products"> -->
+
+    <!-- <h3>
+      <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]">
+        {{ product.name }}
+      </a>
+      </h3> -->
+      <h2>Products</h2>
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+      <div class="images" *ngFor="let product of products, let i = index">
+        <img [src]="product?.image" alt=""/>
+        <h3>{{ product.name }}</h3>
+        <h4>{{ product.price | currency:'R ' }}</h4>
+        <p>{{ product.description }}</p>
+        <button class="btn btn-info" type="button" (click)="addToCart(product)">Buy</button>
+      </div>
+        <!-- </h3>
+        <p *ngIf="product.description">
+            Description:{{product.description}}
+        </p>
+        <button type="button" (click)="share()">Share</button>
+        <app-product-alerts
+        [product]="product"
+         (notify)="onNotify()">
+        </app-product-alerts> -->
+  </div>

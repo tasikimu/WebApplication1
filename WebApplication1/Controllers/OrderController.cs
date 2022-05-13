@@ -16,48 +16,49 @@ namespace WebApplication1.Controllers
             this.context = context;
         }
         [HttpGet]
-        public async Task<ActionResult<List<OrderDetails>>> Get()
+        public async Task<ActionResult<List<Order>>> Get()
         {
-            return Ok(await context.OrderDetailss.ToListAsync());
+            return Ok(await context.Orders.ToListAsync());
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderDetails>> Get(int id)
+        public async Task<ActionResult<Order>> Get(int id)
         {
-            var order = await context.OrderDetailss.FindAsync(id);
+            var order = await context.Orders.FindAsync(id);
             if (order == null)
                 return BadRequest("order not found.");
             return Ok(order);
         }
         [HttpPost]
-        public async Task<ActionResult<List<OrderDetails>>> AddOrder(OrderDetails order)
+        public async Task<ActionResult<List<Order>>> AddOrder(Order order)
         {
-            context.OrderDetailss.Add(order);
+            context.Orders.Add(order);
             await context.SaveChangesAsync();
-            return Ok(await context.OrderDetailss.ToListAsync());
+            return Ok(await context.Orders.ToListAsync());
         }
 
         [HttpPut]
-        public async Task<ActionResult<List<OrderDetails>>> UpdateOrder(OrderDetails request)
+        public async Task<ActionResult<List<Order>>> UpdateOrder(Order request)
         {
-            var dbOrder = await context.OrderDetailss.FindAsync(request.OrderId);
+            var dbOrder = await context.Orders.FindAsync(request.CustomerId);
             if (dbOrder == null)
                 return BadRequest("order not found.");
 
-            dbOrder.Price = request.Price;
-            dbOrder.Quantity = request.Quantity;
+            dbOrder.Amount = request.Amount;
+            dbOrder.ShippingAdress = request.ShippingAdress;
+            dbOrder.OrderEmail = request.OrderEmail;
 
             await context.SaveChangesAsync();
-            return Ok(await context.OrderDetailss.ToListAsync());
+            return Ok(await context.Orders.ToListAsync());
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<OrderDetails>> Delete(int id)
+        public async Task<ActionResult<Order>> Delete(int id)
         {
-            var dbOrder = await context.OrderDetailss.FindAsync(id);
+            var dbOrder = await context.Orders.FindAsync(id);
             if (dbOrder == null)
                 return BadRequest("order not found.");
-            context.OrderDetailss.Remove(dbOrder);
+            context.Orders.Remove(dbOrder);
             await context.SaveChangesAsync();
-            return Ok(await context.OrderDetailss.ToListAsync());
+            return Ok(await context.Orders.ToListAsync());
         }
     }
 }

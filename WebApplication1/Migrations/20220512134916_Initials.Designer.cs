@@ -11,8 +11,8 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220509074917_CreateInitial")]
-    partial class CreateInitial
+    [Migration("20220512134916_Initials")]
+    partial class Initials
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,27 @@ namespace WebApplication1.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("WebApplication1.Entities.Login", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logins");
+                });
+
             modelBuilder.Entity("WebApplication1.Entities.Order", b =>
                 {
                     b.Property<int>("CustomerId")
@@ -82,11 +103,11 @@ namespace WebApplication1.Migrations
 
             modelBuilder.Entity("WebApplication1.Entities.OrderDetails", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -94,7 +115,7 @@ namespace WebApplication1.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderId");
+                    b.HasKey("Id");
 
                     b.ToTable("OrderDetailss");
                 });
@@ -121,6 +142,9 @@ namespace WebApplication1.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

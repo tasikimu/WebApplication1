@@ -1,0 +1,100 @@
+<h1 style="text-align:center">
+  Register Page
+</h1>
+<div class="login">
+  <h2 class="login-header">Register</h2>
+  <form [formGroup]="form" class="login-container" (ngSubmit)="onFormSubmit()">
+
+    <p [ngClass]="{ 'has-error': submitted && formControls['Fullname'].errors }" class="form-controller">
+      <input type="Fullname" placeholder="Fullname" formControlName="Fullname">
+    </p>
+
+    <div *ngIf="submitted && formControls['Fullname'].errors" class="help-block">
+      <div *ngIf="formControls.Fullname.errors.required" style="color: red">Full Name is required!</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': submitted && formControls['UserName'].errors }" class="form-controller">
+      <input type="UserName" placeholder="UserName" formControlName="UserName">
+    </p>
+
+    <div *ngIf="submitted && formControls['UserName'].errors" class="help-block">
+      <div *ngIf="formControls.UserName.errors.required" style="color: red">UserName is required!</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': submitted && formControls['Email'].errors }" class="form-controller">
+      <input type="email" placeholder="Email" formControlName="Email">
+    </p>
+
+    <div *ngIf="submitted && formControls['Email'].errors" class="help-block">
+      <div *ngIf="formControls.Email.errors.required" style="color: red">Email is required!</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': submitted && formControls['Address'].errors }" class="form-controller">
+      <input type="Address" placeholder="Address" formControlName="Address">
+    </p>
+
+    <div *ngIf="submitted && formControls['Address'].errors" class="help-block">
+      <div *ngIf="formControls.Address.errors.required" style="color: red">Address is required!</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': submitted && formControls['Password'].errors }">
+      <input type="Password" placeholder="Password" formControlName="Password">
+    </p>
+
+    <div *ngIf="submitted && formControls['Password'].errors" class="help-block">
+      <div *ngIf="formControls.Password.errors.required" style="color: red">Password is required!</div>
+    </div>
+
+    <p>
+      <input type="submit" value="Register">
+    </p>
+    <p>Already a member?
+      <a routerLink="/login">Login Here</a>
+  </p>
+  </form>
+</div>
+
+
+<!-- <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <form>
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+  
+      <form  [formGroup]="form" (ngSubmit)="onFormSubmit()" class="example-form">
+      
+        <mat-card-content>
+
+          <mat-form-field class="example-full-width">
+            <input id="UserName" matInput formControlName="UserName" placeholder="UserName">
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width">
+            <input id="Fullname" matInput formControlName="Fullname" placeholder="Fullname">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input id="Address" matInput formControlName="Address" placeholder="Address">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input id="Email" matInput formControlName="Email" placeholder="Email">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input type="password" id="Password" matInput formControlName="Password" placeholder="Password">
+          </mat-form-field>
+          
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" type="submit" class="btn-block">Register</button>
+
+        <p>Already a member?
+          <a routerLink="/login">Login Here</a>
+      </p>
+      </form>
+    </mat-card>
+    </form>
+  </div> -->
