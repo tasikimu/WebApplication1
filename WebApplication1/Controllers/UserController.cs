@@ -8,7 +8,6 @@ using WebApplication1.Entities;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize]
     [Route("api/User/Register")]
     [ApiController]
     public class UserController : ControllerBase 
