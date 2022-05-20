@@ -1,5 +1,8 @@
 global using WebApplication1.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -12,11 +15,29 @@ builder.Services.AddCors(options =>
                       {
                           policy.WithOrigins("*")
                           .AllowAnyHeader()
-                                                  .AllowAnyMethod();
+                          .AllowAnyMethod();
                       });
 });
 
 // Add services to the container.
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.SaveToken = true;
+            options.RequireHttpsMetadata = false;
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]))
+            };
+
+        });
+
+builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>(options =>
@@ -40,6 +61,7 @@ app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

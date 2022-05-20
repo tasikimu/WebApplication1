@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder,) { }
 
-  onFormSubmit() 
+  onFormSubmit()
   {
     this.submitted = true;
     if(this.form.invalid){

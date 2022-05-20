@@ -11,7 +11,6 @@ namespace WebApplication1.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<OrderDetails> OrderDetailss { get; set; }
-        public DbSet<Login> Logins { get; set; }
     }
 
 }
