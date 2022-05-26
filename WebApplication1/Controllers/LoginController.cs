@@ -8,7 +8,7 @@ using WebApplication1.Entities;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Login")]
     [ApiController]
     public class LoginController : ControllerBase
     {

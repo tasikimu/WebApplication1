@@ -36,20 +36,20 @@ namespace WebApplication1.Controllers
             return Ok(await context.Orders.ToListAsync());
         }
 
-        [HttpPut]
+        /*[HttpPut]
         public async Task<ActionResult<List<Order>>> UpdateOrder(Order request)
         {
             var dbOrder = await context.Orders.FindAsync(request.CustomerId);
             if (dbOrder == null)
                 return BadRequest("order not found.");
 
-            dbOrder.Amount = request.Amount;
+            dbOrder.pr = request.Amount;
             dbOrder.ShippingAdress = request.ShippingAdress;
             dbOrder.OrderEmail = request.OrderEmail;
 
             await context.SaveChangesAsync();
             return Ok(await context.Orders.ToListAsync());
-        }
+        }*/
         [HttpDelete("{id}")]
         public async Task<ActionResult<Order>> Delete(int id)
         {
