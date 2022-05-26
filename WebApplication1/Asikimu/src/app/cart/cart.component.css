@@ -1,0 +1,46 @@
+.empty{
+    height: 370px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+}
+
+.cart{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+
+.img{
+    width: 100%;
+}
+
+.desc{
+    flex: 5rem;
+}
+
+.quantity{
+    width: 9em;
+    text-align: center;
+}
+
+b{
+    justify-self: end;
+}
+
+.btn{
+    grid-column: 1 / -1;
+}
+
+.b-bottom {
+  border-bottom: 1px solid #c8c9ca;
+}
+
+.b-top {
+  border-top: 1px solid #c8c9ca;
+}
+

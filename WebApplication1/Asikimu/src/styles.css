@@ -1,0 +1,35 @@
+  /* Checkout Cart, Shipping Prices */
+
+  .cart-item, .shipping-item {
+    width: 100%;
+    min-width: 400px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 32px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    background-color: #EEEEEE;
+  }
+
+
+.bg-cart {
+  background-color:rgb(235, 126, 254);
+  color:#fff;
+}
+
+.bg-cart:hover {
+
+  color:#fff;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+ .fancy-button i.material-icons {
+    color: #1976d2;
+    padding-right: 4px;
+  }

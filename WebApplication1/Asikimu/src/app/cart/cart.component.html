@@ -1,0 +1,55 @@
+<h2 style="text-align: center; color: rgb(3, 91, 126);">Shopping Cart</h2>
+<br/>
+<div class="empty" *ngIf="items.length < 1">
+<div class="info">
+  <h4>Nothing on the cart yet.</h4>
+  <a routerLink="" class="btn btn-success">Start Shopping</a>
+</div>
+</div>
+
+<div class="container" *ngIf="items.length > 0" >
+    <div class="row d-flex justify-content-center align-items-center h-100 b-bottom b-top"  *ngFor="let item of items, let i = index " >
+              <div class="col-1  d-flex justify-content-between align-items-center">
+                <a  class="text-danger"><i class="fas fa-trash fa-lg" (click)="onDelete(i)"></i></a>
+              </div>
+              <div class="col-2">
+                <img
+                  [src]="item.image"
+                  class="img-fluid rounded-3" alt="" style="width: -webkit-fill-available;">
+              </div>
+              <div class="col">
+                <h3 style="color: rgb(3, 91, 126);">{{item.name}}</h3>
+                <h4 style="color: #0a4275;"><strong>{{item.price | currency: 'R '}}</strong></h4>
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                <input class="quantity" min="0" name="quantity" type="number"  (blur)="validateInput($event, i)" [value]="item?.quantity"
+                  class="form-control form-control-sm" style="border-radius: 2rem;" >
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h4 style="color: #0a4275;" class="mb-0"><strong>{{item?.price * item?.quantity | currency:'R '}}</strong></h4>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col"></div>
+            
+        <div class="col-5">
+          <h4 style="color: rgb(3, 91, 126)">SubTotal: <span><strong>{{total | currency: 'R '}}</strong></span></h4>
+          <h4 style="color: rgb(3, 91, 126)">Shipping: <span style="color: red;"><b>FREE</b></span></h4>
+          <hr/>
+          <h3 style="color: rgb(3, 91, 126)">Total Price: <span style="color: #0a4275;" ><strong>{{total | currency: 'R '}}</strong></span></h3>
+          <div class="col">
+            <button routerLink="" type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>
+            <button routerLink="/login" type="button" class="btn btn-lg btn-primary mt-2">Checkout</button>
+          </div>
+          <hr/>
+          </div>
+        </div>
+  </div>
+
+
+<!-- <h3>Cart</h3>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p> -->
+
