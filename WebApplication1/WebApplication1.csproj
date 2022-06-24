@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Asikimu\**" />
+    <Content Remove="Asikimu\**" />
+    <EmbeddedResource Remove="Asikimu\**" />
+    <None Remove="Asikimu\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
     <PackageReference Include="Microsoft.AspNet.Providers.Core" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.8" />

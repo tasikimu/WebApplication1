@@ -1,0 +1,73 @@
+<section class="vh-100">
+  <div class="login">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form [formGroup]="form" class="login-container" (ngSubmit)="onFormSubmit()">
+
+          <p [ngClass]="{ 'has-error': submitted && formControls['Fullname'].errors }" class="form-controller">
+            <input type="Fullname" placeholder="Fullname" formControlName="Fullname">
+          </p>
+
+          <div *ngIf="submitted && formControls['Fullname'].errors" class="help-block">
+            <div *ngIf="formControls.Fullname.errors.required" style="color: red">Full Name is required!</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': submitted && formControls['UserName'].errors }" class="form-controller">
+            <input type="UserName" placeholder="UserName" formControlName="UserName">
+          </p>
+
+          <div *ngIf="submitted && formControls['UserName'].errors" class="help-block">
+            <div *ngIf="formControls.UserName.errors.required" style="color: red">UserName is required!</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': submitted && formControls['Email'].errors }" class="form-controller">
+            <input type="email" placeholder="Email" formControlName="Email">
+          </p>
+
+          <div *ngIf="submitted && formControls['Email'].errors" class="help-block">
+            <div *ngIf="formControls.Email.errors.required" style="color: red">Email is required!</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': submitted && formControls['Address'].errors }"  >
+            <input placeholder="Address" formControlName="Address" type="email">
+          </p>
+
+          <div *ngIf="submitted && formControls['Address'].errors" class="help-block">
+            <div *ngIf="formControls.Address.errors.required" style="color: red">Address is required!</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': submitted && formControls['Password'].errors }">
+            <input type="password" placeholder="Password" formControlName="Password">
+          </p>
+
+          <div *ngIf="submitted && formControls['Password'].errors" class="help-block">
+            <div *ngIf="formControls.Password.errors.required" style="color: red">Password is required!</div>
+          </div>
+
+          <p>
+            <input type="submit" value="Register">
+          </p>
+          <p>Already a member?
+            <a routerLink="/login">Login Here</a>
+        </p>
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+            role="button">
+            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+          </a>
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+            role="button">
+            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
