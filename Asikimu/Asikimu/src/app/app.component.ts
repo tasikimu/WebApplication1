@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from './services/cart.service';
 import { UserService } from './services/user.service';
 
@@ -13,7 +14,7 @@ export class AppComponent {
 
   showButtons: boolean = true;
 
-  constructor(private cartService: CartService, public userService: UserService){}
+  constructor(private cartService: CartService, public userService: UserService, private route: Router){}
 
   ngOnInit(){
     this.cartService.cartItems.subscribe(d => {
@@ -21,6 +22,10 @@ export class AppComponent {
       // console.log(d);
     })
 
+  }
+
+  login(){
+    this.route.navigate(["/login"]);
   }
 
   logout(){

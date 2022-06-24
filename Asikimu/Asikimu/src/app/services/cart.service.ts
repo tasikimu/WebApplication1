@@ -88,6 +88,7 @@ export class CartService {
   }
 
   clearCart() {
-    return this.cartItems;
+    this.placeholder = [];
+    this.cartItems.next(this.placeholder);
   }
 }

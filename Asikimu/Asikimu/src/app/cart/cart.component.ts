@@ -5,6 +5,7 @@ import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
 import { CheckoutService } from '../services/checkout.service';
 import { UserService } from '../services/user.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -15,6 +16,9 @@ import { UserService } from '../services/user.service';
 export class CartComponent implements OnInit {
   items: any[] = [];
   total: number;
+  public cartitems: any = [];
+  public products = new BehaviorSubject<any>([]);
+
   // product: Order;
   // items = this.cartService.getItems();
 
@@ -28,10 +32,11 @@ export class CartComponent implements OnInit {
       if(this.items) this.getTotal(this.items)
   }
 
-  onDelete(i: number){
+  onDelete(i: any){
     this.items.splice(i, 1);
     this.getTotal(this.items);
     localStorage.setItem('cart', JSON.stringify(this.items));
+    this.products.next(this.items);
   }
 
   validateInput(event: any, i: number){
@@ -56,7 +61,7 @@ export class CartComponent implements OnInit {
     this.total = subs;
   }
 
-  checkout(data: any) {
+  checkout() {
     if (this.userService.isLoggedIn)
     {
       this.route.navigate(["/checkout"]);
