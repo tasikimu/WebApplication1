@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  items: any[] = [];
+  items: Product[];
 
   constructor(private checkout: CheckoutService, public userService: UserService) { }
 

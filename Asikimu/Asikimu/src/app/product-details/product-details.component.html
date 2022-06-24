@@ -1,6 +1,12 @@
 <div class="container">
     <div class="product-content product-wrap clearfix product-deatil">
         <div class="row">
+            <h5 class="mb-3" >
+              <a routerLink="" style="text-decoration: none; font-size: medium; color: black;">
+              <i class="fas fa-long-arrow-alt-left me-2" >
+              </i>Continue shopping</a>
+            </h5>
+            <hr>
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image">
                     <div id="myCarousel-2" class="carousel slide">
@@ -34,9 +40,15 @@
                 <hr />
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-lg" (click)="addToCart(product)">Add to cart {{product?.price | currency:'R '}}</a>
+                        <a  class="btn btn-success btn-lg" (click)="addToCart(product)">Add to cart {{product?.price | currency:'R '}}</a>
                     </div>
                 </div>
+                <!-- <hr>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <a href="javascript:void(0);" class="btn btn-success btn-lg" >Continue Shopping</a>
+                </div>
+                </div> -->
             </div>
         </div>
     </div>

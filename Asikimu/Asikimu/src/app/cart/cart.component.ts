@@ -56,14 +56,20 @@ export class CartComponent implements OnInit {
     this.total = subs;
   }
 
-  checkout(product: any) {
+  checkout(data: any) {
     if (this.userService.isLoggedIn)
     {
-      this.order.SubmitOrder(product).subscribe(x => {
-        console.log(x);
-      })
-      // this.route.navigate(["/checkout"]);
+      this.route.navigate(["/checkout"]);
+      this.cartService.clearCart(data);
     }
+  // checkout(product: any) {
+  //   if (this.userService.isLoggedIn)
+  //   {
+  //     this.order.SubmitOrder(product).subscribe(x => {
+  //       console.log(x);
+  //     })
+  //     // this.route.navigate(["/checkout"]);
+  //   }
     else
     {
       this.route.navigate(["/login"])
