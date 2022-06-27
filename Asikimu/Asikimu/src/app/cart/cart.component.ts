@@ -66,6 +66,7 @@ export class CartComponent implements OnInit {
     {
       this.route.navigate(["/checkout"]);
       this.cartService.clearCart();
+    localStorage.removeItem('cart');
     }
   // checkout(product: any) {
   //   if (this.userService.isLoggedIn)
