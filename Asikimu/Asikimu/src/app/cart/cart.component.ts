@@ -36,7 +36,6 @@ export class CartComponent implements OnInit {
     this.items.splice(i, 1);
     this.getTotal(this.items);
     localStorage.setItem('cart', JSON.stringify(this.items));
-    this.products.next(this.items);
   }
 
   validateInput(event: any, i: number){

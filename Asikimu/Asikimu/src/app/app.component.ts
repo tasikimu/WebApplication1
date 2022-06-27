@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from './services/cart.service';
 import { UserService } from './services/user.service';
@@ -8,7 +8,7 @@ import { UserService } from './services/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck{
   title = 'Login Page';
   itemInCart: number;
 
@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(private cartService: CartService, public userService: UserService, private route: Router){}
 
-  ngOnInit(){
+  ngDoCheck(): void{
     this.cartService.cartItems.subscribe(d => {
       this.itemInCart = d.length;
       // console.log(d);
