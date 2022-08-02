@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft. EntityFrameworkCore;
 using WebApplication1.Entities;
 
 namespace WebApplication1.Data
