@@ -30,6 +30,7 @@
 
           <div *ngIf="submitted && formControls['Email'].errors" class="help-block">
             <div *ngIf="formControls.Email.errors.required" style="color: red">Email is required!</div>
+            <span *ngIf="formControls.UserName.errors.email"></span>
           </div>
 
           <p [ngClass]="{ 'has-error': submitted && formControls['Address'].errors }"  >
