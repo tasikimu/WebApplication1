@@ -6,6 +6,7 @@ import { CartService } from '../services/cart.service';
 import { CheckoutService } from '../services/checkout.service';
 import { UserService } from '../services/user.service';
 import { BehaviorSubject } from 'rxjs';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-cart',
@@ -24,7 +25,7 @@ export class CartComponent implements OnInit {
 
 
 
-  constructor(private cartService: CartService, public userService: UserService, private route: Router, private order: CheckoutService) { }
+  constructor(private cartService: CartService, public userService: UserService, private route: Router, private order: CheckoutService, private notification: NotificationService) { }
 
   ngOnInit() {
       this.items = this.cartService.cartItems.value;
@@ -66,6 +67,7 @@ export class CartComponent implements OnInit {
       this.route.navigate(["/checkout"]);
       this.cartService.clearCart();
     localStorage.removeItem('cart');
+    this.notification.showSuccess("Order Submitted Successfully.", "Success")
     }
   // checkout(product: any) {
   //   if (this.userService.isLoggedIn)

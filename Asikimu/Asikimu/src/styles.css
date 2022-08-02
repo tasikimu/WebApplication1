@@ -1,4 +1,5 @@
   /* Checkout Cart, Shipping Prices */
+  @import "~bootstrap/dist/css/bootstrap.css";
 
   .cart-item, .shipping-item {
     width: 100%;
@@ -33,3 +34,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #1976d2;
     padding-right: 4px;
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

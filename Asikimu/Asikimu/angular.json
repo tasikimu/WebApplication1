@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "Asikimu"
+  "defaultProject": "Asikimu",
+  "cli": {
+    "analytics": false
+  }
 }

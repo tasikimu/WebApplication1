@@ -94,15 +94,15 @@
   margin-bottom: 0;
 }
 
-/* .login-triangle {
+.login-triangle {
   width: 0;
   margin-right: auto;
   margin-left: auto;
   border: 12px solid transparent;
   border-bottom-color: rgb(15, 66, 107);
-} */
+}
 
-/* .login-header {
+.login-header {
   background: rgb(12, 77, 129);
   padding: 20px;
   font-size: 1.4em;
@@ -110,7 +110,7 @@
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-} */
+}
 .divider:after,
 .divider:before {
 content: "";
@@ -130,7 +130,7 @@ background: #eee;
 .login input {
   box-sizing: border-box;
   display: block;
-  width: 100%;
+  width: 120%;
   border-width: 1px;
   border-style: solid;
   padding: 16px;

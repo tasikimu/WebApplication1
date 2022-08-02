@@ -1,8 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-
-
-
 .login-header,
 .login p {
   margin-top: 0;
@@ -38,13 +35,14 @@
 .login input {
   box-sizing: border-box;
   display: block;
-  width: 100%;
+  width: 120%;
   border-width: 1px;
   border-style: solid;
   padding: 16px;
   outline: 0;
   font-family: inherit;
   font-size: 0.95em;
+  height: auto;
 }
 
 .login input {
