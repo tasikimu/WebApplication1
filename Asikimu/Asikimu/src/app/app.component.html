@@ -1,19 +1,21 @@
 <mat-toolbar style="background-color: #0a4275;" class="app-header">
 
- 
+ <div>
     <mat-icon aria-hidden="false" aria-label="Example home icon"  routerLink="" style='font-size:38px; color: white;'>home</mat-icon>
-
-  
-        <mat-icon [matBadge]="itemInCart" matBadgeColor="accent" aria-label="shopping cart"  routerLink="/cart" style='font-size:32px;color: white;'>shopping_cart</mat-icon>
-
+    </div>
+    <div>
+        <mat-icon [matBadge]="itemInCart" matBadgeColor="accent" aria-label="shopping cart"  routerLink="/cart" style='font-size:32
+        px;color: white;'>shopping_cart</mat-icon>
+</div>
   <span class="nav-tool-items">
     <div>
 
     <a mat-button  (click)="logout()" *ngIf="this.userService.isLoggedIn" type="button" style="color: white;" >Logout</a>
   </div>
+  <div>
     <a mat-button routerLink="login" routerLinkActive="active" *ngIf="!this.userService.isLoggedIn" style="color: white;">Signin</a>
     <!-- <a mat-button mat-raised-button routerLink="register">Signin/ Register</a> -->
-
+  </div>
   </span>
 </mat-toolbar>
 <mid-content>
