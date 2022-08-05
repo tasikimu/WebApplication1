@@ -27,3 +27,9 @@
   .horizontal-timeline .items .items-list {
   padding-top: 15px;
   }
+
+  .click {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+  }
