@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartComponent } from '../cart/cart.component';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
 import { CheckoutService } from '../services/checkout.service';
@@ -13,6 +14,7 @@ import { UserService } from '../services/user.service';
 export class CheckoutComponent implements OnInit {
   items: Product[];
   paymentHandler: any = null;
+  total: number;
 
   constructor(private cartservice: CartService, public userService: UserService, private notification: NotificationService) { }
 
@@ -29,8 +31,8 @@ export class CheckoutComponent implements OnInit {
       },
     });
     paymentHandler.open({
-    name: "Payment Asikimu",
-    description: "The Book Shop",
+    name: "The Wizard BookShop",
+    description: "It's all about fantasy",
     amount: amount * 100,
     })
     // this.notification.showSuccess("Purchase was successfull", "Success");

@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
    }
    loginForm: FormGroup;
    isSubmitted  =  false;
-   public invalidLogin: boolean = false;                 
+   public invalidLogin: boolean = false; 
+   clicked = false;               
 
    login(){
     

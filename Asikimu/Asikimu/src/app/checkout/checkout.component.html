@@ -1,31 +1,39 @@
-<div class="click">
-  <h2>Payment Gateaway</h2>
-<button (click)="makepayment(10)" type="submit">Make Payment</button>
-</div>
-
-
-<!-- <section class="h-100 h-custom" style="background-color: #eee;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-8 col-xl-6">
-        <div class="card border-top border-bottom border-3" style="border-color: #0a4275 !important;">
-          <div class="card-body p-5">
-
-            <p class="lead fw-bold mb-5" style="color: #0a4275;">Purchase Reciept</p>
-            <div class="jumbotron text-center">
-              <h1 class="display-3">Thank You For your Order!</h1>
-              <p class="lead">For further instructions please contact us on</p>
-              <p class="lead"><strong>dummyemail@gmail.com</strong>
-              </p>
-              <hr>
-              <br/>
-              <p class="lead">
-                <a class="btn btn-primary btn-sm" routerLink="" role="button">Continue to homepage</a>
-              </p>
-            </div>
-          </div>
-        </div>
+<div class="container py-5">
+  <h5 class="mb-3" >
+    <a routerLink="" style="text-decoration: none; font-size: medium; color: black;">
+    <i class="fas fa-long-arrow-alt-left me-2" >
+    </i>Continue shopping</a>
+  </h5>
+  <!-- For demo purpose -->
+  <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-6">Bootstrap Payment Forms</h1>
       </div>
+  </div> <!-- End -->
+  <div class="row"> <!-- start-->
+      <div class="col-lg-6 mx-auto">
+          <div class="card ">
+              <div class="card-header">
+                  <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                      <!-- Credit card form tabs -->
+                      <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                          <li class="nav-item"> <a data-toggle="pill"  class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                          <li class="nav-item"> <a data-toggle="pill"  class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                          <li class="nav-item"> <a data-toggle="pill"  class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a> </li>
+                      </ul>
+                  </div> <!-- End -->
+                  <!-- Credit card form content -->
+                  <div class="tab-content">
+                      <!-- credit card info-->
+                      <div id="credit-card" class="tab-pane fade show active pt-3">
+                          <form role="form">
+                              <div class="card-footer py-5 d-flex justify-content-center align-items-center ">
+                                 <button type="button" (click)="makepayment(35)" class=" btn btn-primary btn-block shadow-sm">{{total | currency: 'R '}} </button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section> -->
+</div>

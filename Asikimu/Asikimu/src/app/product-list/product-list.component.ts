@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
+import { NotificationService } from '../services/notification.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ProductListComponent {
   products: any[] = [];
   displayedImg = 0;
 
-  constructor(private productService: ProductService, private cartService: CartService) { }
+  constructor(private productService: ProductService, private cartService: CartService, private notification: NotificationService) { }
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe((products: any) => {
@@ -22,7 +23,8 @@ export class ProductListComponent {
   }
 
   addToCart(product: Product){
-    this.cartService.addItem(product)
+    this.cartService.addItem(product);
+    this.notification.showSuccess("Item added successfully", "Success")
   }
 
   // ngOnInit(): void {

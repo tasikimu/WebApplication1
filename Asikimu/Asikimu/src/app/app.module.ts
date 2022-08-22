@@ -16,6 +16,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot(),
   ],
   providers: [],

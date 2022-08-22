@@ -1,25 +1,30 @@
-<div
-  class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
-  style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');"
->
+<!-- <div style="text-align:center">
   <h1 class="mb-3 h2"><strong>The-Wizzard-BookShop</strong></h1>
-
   <h2><p>
     We are really pleased that you have chosen to visit our book shop.
 </p>
-<p>
-    We have excellent stock to browse.
-    </p>
-    <p>We are sure that you will find
-    something of interest amongst our delectable offerings ....
-</p></h2>
-</div>
+</h2>
+</div> -->
 <div class="col">
-
 <div class="container d-flex justify-content-center mt-50 mb-50">
   <div class="row"  >
       <div class="col-md-4 mt-2" *ngFor="let product of products, let i = index">
-        <a class="images" [routerLink]="[ 'product-details', product.id ]" style="text-decoration: none; color: black;">
+        <div class='container-fluid'>
+          <div class="card mx-auto col-md-3 col-10 mt-5">
+              <img class='mx-auto img-thumbnail'
+                  [src]="product.image"
+                  width="auto" height="auto"/>
+              <div class="card-body text-center mx-auto">
+                  <div class='cvp'>
+                      <h3 class="card-title font-weight-bold">{{product.name}}</h3>
+                      <h2 class="card-text"><b>{{product.price | currency: 'R ' }}</b></h2>
+                      <a [routerLink]="['product-details', product.id]" class="btn details px-auto">View Details</a><br />
+                      <a (click)="addToCart(product)" class="btn cart px-auto">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!-- <a class="images" [routerLink]="[ 'product-details', product.id ]" style="text-decoration: none; color: black;">
         <div class="card" >
           <div class="card-body">
             <div class="card-img-actions">
@@ -34,7 +39,7 @@
           <h2 class="mb-0 font-weight-semibold"><b>{{product.price | currency: 'R '}}</b></h2>
         </div>
       </div>
-    </a>
+    </a> -->
     <br>
     </div>
   </div>

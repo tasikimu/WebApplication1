@@ -67,7 +67,7 @@ export class CartComponent implements OnInit {
       this.route.navigate(["/checkout"]);
     //   this.cartService.clearCart();
     // localStorage.removeItem('cart'); 
-    this.notification.showSuccess("Order Submitted Successfully.", "Success")
+    // this.notification.showSuccess("Order Submitted Successfully.", "Success")
     }
   // checkout(product: any) {
   //   if (this.userService.isLoggedIn)
