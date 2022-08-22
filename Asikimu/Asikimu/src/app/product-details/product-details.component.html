@@ -34,6 +34,17 @@
                             <h4 >
                             {{product?.description}}
                             </h4>
+                            <ng-container *ngFor="let rating of ratings; index as i">
+                                <div class="rating">
+                                    <span>
+                                        Ratings
+                                    </span>
+                                    <div>
+                                        <ngx-material-rating [color]="rating.color" [(ngModel)]="ratings[i].value" [max]="rating.max">
+                                        </ngx-material-rating>
+                                    </div>
+                                </div>
+                            </ng-container>
                         </div>
                     </div>
                 </div>

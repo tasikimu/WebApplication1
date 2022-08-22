@@ -4,6 +4,7 @@ import { ProductService } from '../services/product.service';
 import {ActivatedRoute} from '@angular/router';
 import { NotificationService } from '../services/notification.service';
 import { Product } from '../models/product.model';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-product-details',
@@ -14,6 +15,13 @@ export class ProductDetailsComponent implements OnInit {
 
   product: Product | undefined;
   displayedImg = 0;
+  ratings: Rating[] = [
+    {
+      value: 4,
+      max: 5,
+      color: "primary"
+    },
+  ];
 
   constructor(private notification: NotificationService ,private productService: ProductService, private cartService: CartService, private route: ActivatedRoute) { }
 
@@ -32,5 +40,13 @@ export class ProductDetailsComponent implements OnInit {
     this.cartService.addItem(product)
     this.notification.showSuccess("Item was added successfully", "Success")
   }
-
 }
+
+interface Rating {
+  value: number;
+  max: number;
+  color?: ThemePalette;
+  disabled?: boolean;
+  dense?: boolean;
+  readonly?: boolean;
+};

@@ -16,7 +16,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxMaterialRatingModule } from 'ngx-material-rating';
+import { ContactComponent } from './contact/contact.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ShippingComponent,
     ProductListComponent,
     CheckoutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgxSpinnerModule,
+    NgxMaterialRatingModule,
     ToastrModule.forRoot(),
   ],
   providers: [],
