@@ -30,8 +30,8 @@ import { ContactComponent } from './contact/contact.component';
     ShippingComponent,
     ProductListComponent,
     CheckoutComponent,
-    ContactComponent,
-  ],
+    ContactComponent, 
+  ], 
   imports: [
     BrowserModule,
     AppRoutingModule,
